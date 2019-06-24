@@ -39,9 +39,9 @@ function log(method,url,data,ruletag)
         local servername=ngx.var.server_name
         local time=ngx.localtime()
         if ua  then
-            line = realIp.." ["..time.."] \""..method.." "..servername..url.."\" \""..data.."\"  \""..ua.."\" \""..ruletag.."\"\n"
+            line = "["..time.."] "..realIp.." \""..method.." "..servername..url.."\" \""..data.."\"  \""..ua.."\" \""..ruletag.."\"\n"
         else
-            line = realIp.." ["..time.."] \""..method.." "..servername..url.."\" \""..data.."\" - \""..ruletag.."\"\n"
+            line = "["..time.."] "..realIp.." \""..method.." "..servername..url.."\" \""..data.."\" - \""..ruletag.."\"\n"
         end
         local filename = logpath..'/'..servername.."_"..ngx.today().."_sec.log"
         write(filename,line)
