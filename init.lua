@@ -84,8 +84,11 @@ ckrules=read_rule('cookie')
 
 function say_html()
     if Redirect then
+	local nowhtml = html
         ngx.header.content_type = "text/html"
-        ngx.say(html)
+	nowhtml = string.gsub(nowhtml, "{ip}", ngx.var.remote_addr)
+	nowhtml = string.gsub(nowhtml, "{host}", ngx.var.host)
+        ngx.say(nowhtml)
         ngx.exit(200)
     end
 end
