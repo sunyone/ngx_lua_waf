@@ -1,7 +1,7 @@
 RulePath = "/usr/local/nginx/conf/waf/wafconf/"
 attacklog = "on"
 logdir = "/usr/local/nginx/logs/hack/"
-UrlDeny="off"
+UrlDeny="on"
 Redirect="on"
 CookieMatch="on"
 PostMatch="on" 
